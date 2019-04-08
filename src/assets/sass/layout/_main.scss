@@ -1,0 +1,11 @@
+/* Main styles
+   ========================================================================== */
+
+.mainContent {
+    border-top: $header-height solid transparent;
+    box-sizing: border-box;
+}
+
+
+// Sections
+@import "sections/home";

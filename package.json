@@ -5,7 +5,11 @@
   "author": "Bobby Bol <me@bobbybol.com>",
   "private": true,
   "dependencies": {
+    "breakpoint-sass": "^2.7.1",
     "core-js": "^2.6.5",
+    "gsap": "^2.1.2",
+    "normalize.css": "^8.0.1",
+    "ramda": "^0.26.1",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.6",
     "vue-router": "^3.0.1"
@@ -14,6 +18,8 @@
     "@vue/cli-plugin-babel": "^3.5.0",
     "@vue/cli-plugin-pwa": "^3.5.0",
     "@vue/cli-service": "^3.5.0",
+    "css-mqpacker": "^7.0.0",
+    "lost": "^8.3.1",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.21"

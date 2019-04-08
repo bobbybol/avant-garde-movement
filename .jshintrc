@@ -1,0 +1,10 @@
+{
+    "globals": {
+        "document": false,
+        "window": false,
+        "localStorage": false,
+        "sessionStorage": false,
+        "setTimeout": false
+    },
+    "esversion": 9
+}
