@@ -1,2 +1,17 @@
 /* Header styles
    ========================================================================== */
+
+.mainHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $header-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-3-normal;
+    color: $color-1-normal;
+    box-shadow: $box-shadow-diffuse;
+    z-index: 99999;
+}

@@ -1,11 +1,11 @@
 <template>
-    <div class="home">
-        <h1>Home</h1>
-    </div>
+<main class="mainContent homeContent">
+    <router-link
+        :to="{ name: 'About' }"
+        class="btn btn--primary"
+        tag="button"
+    >
+        Start!
+    </router-link>
+</main>
 </template>
-
-<script>
-export default {
-
-}
-</script>

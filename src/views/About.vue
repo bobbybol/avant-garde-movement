@@ -1,8 +1,10 @@
 <template>
-    <div class="about">
-        <h1>Ab00t</h1>
-        <voorhoede-accordion :voorhoeders="voorhoeders" />
-    </div>
+<main class="mainContent">
+    <voorhoede-accordion
+        v-if="voorhoeders"
+        :voorhoeders="voorhoeders"
+    />
+</main>
 </template>
 
 <script>

@@ -1,8 +1,9 @@
 # Avant Garde Movement App
 To Whom It May Concern:
 
-## Introduction
-Main considerations
+## Project Description
+Two layers - getting data and manipulation
+Data presentation in
 
 ### NPM
 | **Command**   | **Result**           |

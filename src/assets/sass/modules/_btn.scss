@@ -2,5 +2,27 @@
    ========================================================================== */
 
 .btn {
+    position: relative;
+    padding: 1rem 3rem;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    border-radius: 3px;
+    font-family: $font-special;
+    color: $color-font-white;
 
+    &--wide {
+        width: 100%;
+    }
+
+    &--primary {
+        background-color: $color-1-normal;
+
+        @include breakpoint($hover-threshold) {
+            transition: 150ms ease-out;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
 }

@@ -1,36 +1,30 @@
 <template>
 <div class="voorhoederWrapper">
 
-    <template v-for="voorhoeder in voorhoeders">
-        <div class="voorhoeder"
-             :key="`t_${ voorhoeder.slug }`"
-        >
-            <div class="voorhoeder_stretcher">
-                <div class="voorhoeder_padder">
-                    <div class="voorhoeder_container">
-                        <div class="voorhoeder_portrait"
-                             :style="{ 'background-image': `url(${ voorhoeder.image.url })` }"
-                        >
-                            <div class="voorhoeder_name">
-                                <p class="p">{{ voorhoeder.name }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <template v-for="(voorhoeder, index) in voorhoeders">
+        <voorhoeder
+            :key="`t_${ voorhoeder.slug }`"
+            :voorhoeder="voorhoeder"
+            :data-index="index"
+        />
     </template>
 
 </div>
 </template>
 
 <script>
+import Voorhoeder from './sub/Voorhoeder';
+
 export default {
     props: {
         voorhoeders: {
             type: Array,
             default: () => []
         }
+    },
+
+    components: {
+        Voorhoeder
     }
 };
 </script>
