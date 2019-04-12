@@ -3,9 +3,12 @@
 
     <template v-for="(voorhoeder, index) in voorhoeders">
         <voorhoeder
-            :key="`t_${ voorhoeder.slug }`"
+            :key="`v_${ voorhoeder.slug }`"
             :voorhoeder="voorhoeder"
             :data-index="index"
+        />
+        <voorhoeder-details
+            :key="`vd_${ voorhoeder.slug }`"
         />
     </template>
 
@@ -14,6 +17,7 @@
 
 <script>
 import Voorhoeder from './sub/Voorhoeder';
+import VoorhoederDetails from './sub/VoorhoederDetails';
 
 export default {
     props: {
@@ -24,7 +28,8 @@ export default {
     },
 
     components: {
-        Voorhoeder
+        Voorhoeder,
+        VoorhoederDetails
     }
 };
 </script>

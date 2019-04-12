@@ -1,9 +1,6 @@
 <template>
-<transition v-if="voorhoeder"
-            appear
-            @enter="enter"
->
-    <div class="voorhoeder">
+<animation-card-flip>
+    <div class="voorhoeder" v-if="voorhoeder">
         <div class="voorhoeder_stretcher">
             <div class="voorhoeder_padder">
                 <div class="voorhoeder_container">
@@ -19,10 +16,12 @@
             </div>
         </div>
     </div>
-</transition>
+</animation-card-flip>
 </template>
 
 <script>
+import AnimationCardFlip from '../animations/AnimationCardFlip.js';
+
 export default {
     props: {
         voorhoeder: {
@@ -31,31 +30,8 @@ export default {
         }
     },
 
-    // Appear Animation
-    methods: {
-        enter(el, done) {
-            const front = el.querySelector('.voorhoeder_portrait');
-            const back  = el.querySelector('.voorhoeder_backside');
-            const delay = el.dataset.index * 0.15 + 0.25;
-            const tl = new TimelineMax({ onComplete: done, delay });
-
-            tl
-                .from(front, 0.6, {
-                    rotationY: 180,
-                    ease: Power2.easeOut,
-                    clearProps: 'transform'
-                })
-                .fromTo(back, 0.6, {
-                    rotationY: 0,
-                    zIndex: 3
-                },{
-                    rotationY: 180,
-                    zIndex: 1,
-                    ease: Power2.easeOut,
-                    clearProps: 'all'
-                }, '-=0.6')
-            ;
-        }
+    components: {
+        AnimationCardFlip
     }
 };
 </script>

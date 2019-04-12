@@ -1,0 +1,84 @@
+/* Voorhoeder Details styles
+   ========================================================================== */
+
+.voorhoederDetails {
+    position: relative;
+    min-width: 100%;
+    background-color: $color-3-normal;
+    overflow: hidden;
+    //transition: 500ms $ease--out-quart;
+    box-shadow: inset 0 12px 12px -12px #000, inset 0 -12px 12px -12px #000;
+
+    &_inner {
+        padding: 1rem 0;
+        width: 87.5%;
+        margin: 0 auto;
+        color: $color-font-white;
+    }
+
+    &_info {
+        .p {
+            margin-top: 1rem;
+        }
+    }
+
+    &_arrow {
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 0;
+        left: 0;
+        margin-left: -34px;
+        box-sizing: border-box;
+        border: 12px solid;
+        border-color: transparent transparent #fff #fff;
+        transform-origin: 0 0;
+        transform: rotate(-45deg);
+        box-shadow: -2px 2px 8px -1px rgba(0, 0, 0, .25);
+        transition: 500ms $ease--out-quart;
+        z-index: 3;
+    }
+}
+
+
+/**
+ * Media Queries
+ */
+
+@include breakpoint(450px) {
+    .voorhoederDetails_inner {
+        padding: 1.5rem 0;
+    }
+}
+
+@include breakpoint(650px) {
+    .voorhoederDetails {
+        &_inner {
+            width: 76%;
+            padding: 2.5rem 0;
+        }
+
+        &_info {
+            .p {
+                margin-top: 1.5rem;
+            }
+        }
+    }
+}
+
+@include breakpoint($ipad-horizontal) {
+    .voorhoederDetails {
+        &_inner {
+            display: flex;
+            width: 87.5%;
+            max-width: 1200px;
+            padding: 3rem 0;
+        }
+
+        &_info {
+            box-sizing: border-box;
+            width: 50%;
+            padding-right: 2rem;
+        }
+    }
+}

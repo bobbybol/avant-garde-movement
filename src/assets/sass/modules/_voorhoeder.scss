@@ -2,10 +2,9 @@
    ========================================================================== */
 
 .voorhoederWrapper {
-    // width: 100%;
     display: flex;
     flex-wrap: wrap;
-    // padding-bottom: 100vh;
+    padding-bottom: 110vh;
 }
 
 .voorhoeder {
@@ -36,7 +35,7 @@
         position: relative;
         width: 100%;
         height: 100%;
-        // background-color: $color-1-normal;
+        background-color: $color-1-normal;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -54,14 +53,110 @@
         bottom: 0;
         width: 100%;
         padding: .25rem 0;
-        // border-top: 2px solid $color-2-normal;
-        // background-color: rgba($color-3-normal, .8);
+        border-top: 2px solid $color-2-normal;
+        background-color: rgba($color-1-normal, .8);
 
         .p {
             font-size: .875rem;
             line-height: 1rem;
-            color: $color-font-white;
+            color: $color-2-normal;
             text-align: center;
         }
+    }
+
+    @include breakpoint($hover-threshold) {
+        &_name {
+            transform: translateY(100%);
+            transition: 300ms $ease--out-expo;
+        }
+
+        &_portrait:hover {
+            .voorhoeder_name {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    &_backside {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #f4f3f9;
+        background-image: url('../../assets/img/logo-with-text.svg');
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-position: center;
+        box-shadow: $box-shadow-subtle;
+
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        z-index: 1;
+    }
+}
+
+
+/**
+ * Media Queries
+ */
+
+@include breakpoint(450px) {
+    .voorhoeder {
+        flex-basis: percentage(1/3);
+    }
+}
+
+@include breakpoint(650px) {
+    .voorhoeder {
+        flex-basis: 25%;
+    }
+}
+
+@include breakpoint(900px) {
+    .voorhoeder {
+        flex-basis: 20%;
+    }
+}
+
+@include breakpoint(1150px) {
+    .voorhoeder {
+        flex-basis: percentage(1/6);
+    }
+}
+
+@include breakpoint(1400px) {
+    .voorhoeder {
+        flex-basis: percentage(1/7);
+    }
+}
+
+@include breakpoint(1650px) {
+    .voorhoeder {
+        flex-basis: 12.5%;
+    }
+}
+
+@include breakpoint(2250px) {
+    .voorhoeder {
+        flex-basis: percentage(1/9);
+    }
+}
+
+@include breakpoint(2800px) {
+    .voorhoeder {
+        flex-basis: 10%;
+    }
+}
+
+@include breakpoint(3150px) {
+    .voorhoeder {
+        flex-basis: percentage(1/11);
+    }
+}
+
+@include breakpoint(3440px) {
+    .voorhoeder {
+        flex-basis: percentage(1/12);
     }
 }
