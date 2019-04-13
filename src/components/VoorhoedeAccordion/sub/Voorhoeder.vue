@@ -6,6 +6,7 @@
                 <div class="voorhoeder_container">
                     <div class="voorhoeder_portrait"
                         :style="{ 'background-image': `url(${ voorhoeder.image.url })` }"
+                        @click="$emit('clicked', voorhoeder.slug)"
                     >
                         <div class="voorhoeder_name">
                             <p class="p">{{ voorhoeder.name }}</p>

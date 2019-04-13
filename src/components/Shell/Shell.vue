@@ -1,9 +1,16 @@
 <template>
 <div class="root">
     <header class="mainHeader">
-        <h1 class="h1">
+        <router-link
+            :to="{ name: 'Home'}"
+            tag="h1"
+            class="h1"
+        >
             Avant-garde Movement App
-        </h1>
+        </router-link>
+        <!-- <h1 class="h1">
+
+        </h1> -->
     </header>
 
     <router-view/>
