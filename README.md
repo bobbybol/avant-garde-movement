@@ -36,7 +36,7 @@ No special care was taken for supporting anything but the most modern browsers.
 I used a variety of animation techniques, just to play with a skill I haven't used for a while. I should probably tone it down and use the proper technique for the proper use-case if this was a production component, because there is some interference.
 
 #### Work in Progress
-This project is not finished, and probably never will be. It's more of an experiment really, to try things out with Vue, take it to its limits. The `VoorhoederAccordion` component could wo with *A LOT* of improvements. Truth be told, I probably wouldn't use Vue to build it after doing this experiment. A vanilla plugin could be a better option, and then you could build a light-weight wrapper for Vue, or any other framework for that matter.
+This project is not finished, and probably never will be. It's more of an experiment really, to try things out with Vue, take it to its limits. The `VoorhoederAccordion` component could do with *A LOT* of improvements. Truth be told, I probably wouldn't use Vue to build it after doing this experiment. A vanilla plugin could be a better option, and then you could build a light-weight wrapper for Vue, or any other framework for that matter.
 
 #### Comment System
 For all the mentioned improvements, there is a comment system in place. These 3 comments demark the most important areas of work:
