@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import router from '@/router';
-import './registerServiceWorker';
 
 import Shell from '@/components/Shell/Shell.vue';
 

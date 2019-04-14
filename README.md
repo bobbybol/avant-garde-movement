@@ -23,7 +23,7 @@ The API call to get the data is done in the `About` view. In a real-world app, t
 The CSS for this project is not optimized - it is simply whatever popped in my mind first or worked the fastest. The focus for this PoC was not on the CSS. Design could definity improve too ;)
 
 #### PWA
-This project has the basic Vue PWA plugin installed, but that's it. There was no point in taking things further and doing real PWA optimization, because it simply would not add to the prototype in any way.
+This project is not built a PWA because it didn't add anything to the proof of concept.
 
 #### Unit Testing
 There are no tests for this project, if such a component would go into production I would place it under Unit tests.
