@@ -40,6 +40,7 @@ This project is not finished, and probably never will be. It's more of an experi
 
 #### Comment System
 For all the mentioned improvements, there is a comment system in place. These 3 comments demark the most important areas of work:
+
 | **Comment**  | **Meaning**                                |
 | ------------ | ------------------------------------------- |
 | @TODO        | unfinished code, needs work                 |
