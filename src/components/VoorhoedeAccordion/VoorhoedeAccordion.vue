@@ -25,7 +25,6 @@
 import debounce from '@/utils/debounce';
 import Voorhoeder from './sub/Voorhoeder';
 import VoorhoederDetails from './sub/VoorhoederDetails';
-import { appendFile } from 'fs';
 
 export default {
     props: {
@@ -43,9 +42,14 @@ export default {
     },
 
     methods: {
+
         // @REFACTOR :: Function body too large
-        // @REFACTOR :: Move measuring of detailsBox to voorhoederDetails component
+        // @REFACTOR :: Move measuring of detailsBox to voorhoederDetails component,
+        // consider a voorhoederDetailsContainer to split logic into reasonable divisions
         // @REFACTOR :: Get a proper unique id, not slug
+        // @REFACTOR :: Get rid of the isAppendee, make declarative
+        // with something like `chosenVoorhoeder` and do a comparison
+        // inside voorhoederDetails
         activateMe(slug) {
             // (re)Calculate sizes and positions
             this.setMeasurements();
@@ -53,6 +57,9 @@ export default {
             // Find all elements in same row
             const me = this.augmentedVoorhoeders.find(v => v.slug === slug);
             const rowArray = this.augmentedVoorhoeders.filter(v => v.top === me.top);
+
+            // Get existing appendee for future reference, before we assign it to another
+            const prevAppendee = this.augmentedVoorhoeders.find(v => v.isAppendee);
 
             // Find last element in row
             const appendee = rowArray.reduce((prevObj, obj) => {
@@ -85,9 +92,6 @@ export default {
             // Set data for details box
             detailsBox.voorhoederData = me;
 
-            // Try for existing appendee
-            const prevAppendee = this.augmentedVoorhoeders.find(v => v.isAppendee);
-
             // Open details box for me
             this.$nextTick(() => {
                 appendee.isAppendee = true;
@@ -107,13 +111,14 @@ export default {
                     delay = 0.25;
                 }
 
-                // @REFACTOR :: 60 is topbar height
-                const scrollTo = me.top + getScrollTop() - 60 - extraHeight;
+                // @REFACTOR :: Magic 60 is topbar height
+                const scrollTo = me.top + scrollTop - 60 - extraHeight;
 
                 // @TODO :: Scroll not perfect when
                 //   - box is already open
                 //   - box is above newly clicked person
                 // :: Delay is just a stopgap
+                // jQuery animate appears to function better: find out why.
 
                 TweenMax.to(window, 0.5, {
                     scrollTo,

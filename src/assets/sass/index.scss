@@ -13,7 +13,6 @@
 // Utilities
 @import "utilities/mixins";
 @import "utilities/utilities";
-@import "utilities/plugins";
 
 // Base
 @import "base/global";
@@ -25,12 +24,9 @@
 
 // Modules
 @import "modules/btn";
-@import "modules/forms";
 @import "modules/voorhoeder";
 @import "modules/voorhoederDetails";
 
 // Layout
 @import "layout/header";
-@import "layout/nav";
 @import "layout/main";
-@import "layout/footer";

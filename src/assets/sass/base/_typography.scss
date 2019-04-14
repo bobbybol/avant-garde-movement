@@ -13,9 +13,41 @@
 
 .h2,
 .h2-like {
-
+    font-family: $font-special;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-bottom: .25rem;
+    color: $color-1-normal;
 }
 
-.p {
+.a {
+    color: $color-1-normal;
+}
 
+ul {
+    list-style: none outside none;
+
+    li {
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+    }
+}
+
+
+/**
+ * Media Queries
+ */
+
+ @include breakpoint(650px) {
+    .h2,
+    .h2-like {
+        font-size: 1.75rem;
+    }
+
+    .a {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+    }
 }
